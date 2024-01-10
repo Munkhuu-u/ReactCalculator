@@ -1,11 +1,13 @@
-import Buttons from "./components/Buttons";
-import Display from "./components/Display";
+import { Buttons } from "./components/Buttons";
+import Screen from "./components/Screen";
+import { useState } from "react";
 
 export default function App() {
+  const [screen, setScreenValue] = useState("");
+
   return (
-    <div>
-      <p> App title</p>
-      <Display />
+    <div className="container">
+      <Screen value={screen} />
       <Buttons />
     </div>
   );
