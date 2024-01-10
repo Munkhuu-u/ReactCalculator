@@ -1,11 +1,11 @@
-import "../styles/button.css";
+import "../styles/buttNumb.css";
 
-export default function ButtNumb({ name, setScreenValue }) {
+export default function ButtNumb({ name, func }) {
   return (
     <button
-      className="button"
+      className="number"
       onClick={(e) => {
-        setScreenValue(e.target.innerText);
+        func(e.target.innerText);
       }}
     >
       {name}

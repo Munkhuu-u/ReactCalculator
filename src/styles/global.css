@@ -3,3 +3,16 @@
   margin: 0;
   padding: 0;
 }
+.container {
+  display: flex;
+}
+.numbers {
+  width: 150px;
+  display: flex;
+  flex-direction: ro;
+  flex-wrap: wrap;
+}
+.operators {
+  display: flex;
+  flex-direction: column;
+}

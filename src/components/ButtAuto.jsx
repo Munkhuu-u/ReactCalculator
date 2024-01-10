@@ -1,8 +1,8 @@
-import "../styles/button.css";
+import "../styles/buttAuto.css";
 
 export default function ButtAuto({ name }) {
   return (
-    <button className="button" onClick={(e) => {}}>
+    <button className="auto" onClick={(e) => {}}>
       {name}
     </button>
   );
