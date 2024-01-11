@@ -45,6 +45,25 @@ export default function App() {
     }
   }
 
+  function autoHandler(autoOperator) {
+    console.log("autoHandler ajillaj baina ");
+    console.log("autoOperator:", autoOperator);
+    switch (autoOperator) {
+      case "C":
+        setScreenValue("");
+        setNum1("");
+        setOper("");
+        break;
+      case "±":
+        setScreenValue(Number(screenValue) * -1);
+        break;
+      case "%":
+        console.log("ajillaj baina");
+        setScreenValue((num1 * screenValue) / 100);
+        break;
+    }
+  }
+
   return (
     <div>
       <Screen value={screenValue} />
@@ -52,7 +71,7 @@ export default function App() {
         <div className="right">
           <div className="autoOperators">
             {autoButtNames.map((e) => (
-              <ButtAuto name={e} />
+              <ButtAuto name={e} funcAut={autoHandler} />
             ))}
           </div>
           <div className="numbers">

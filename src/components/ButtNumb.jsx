@@ -5,8 +5,7 @@ export default function ButtNumb({ name, funcNum }) {
     <button
       className="number"
       onClick={(e) => {
-        funcNum(e.target.innerText);
-        console.log(e.target.innerText);
+        funcNum(name);
       }}
     >
       {name}
