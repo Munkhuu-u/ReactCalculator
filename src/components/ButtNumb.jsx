@@ -1,11 +1,12 @@
 import "../styles/buttNumb.css";
 
-export default function ButtNumb({ name, func }) {
+export default function ButtNumb({ name, funcNum }) {
   return (
     <button
       className="number"
       onClick={(e) => {
-        func(e.target.innerText);
+        funcNum(e.target.innerText);
+        console.log(e.target.innerText);
       }}
     >
       {name}

@@ -1,8 +1,13 @@
 import "../styles/buttOper.css";
 
-export default function ButtOper({ name }) {
+export default function ButtOper({ name, funcOpe }) {
   return (
-    <button className="operator" onClick={(e) => {}}>
+    <button
+      className="operator"
+      onClick={(e) => {
+        funcOpe(name);
+      }}
+    >
       {name}
     </button>
   );

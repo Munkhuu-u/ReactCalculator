@@ -9,31 +9,62 @@ import { operButtNames } from "./utils/keynames";
 import { useState } from "react";
 
 export default function App() {
-  const [screen, setScreenValue] = useState("");
+  const [screenValue, setScreenValue] = useState("");
+  const [num1, setNum1] = useState("");
+  const [operator, setOper] = useState("");
 
-  function addNum(changes) {
-    setScreenValue(screen + changes);
+  function num1Handler(changes) {
+    setScreenValue(screenValue + changes + "");
   }
+
+  function opHandler(op) {
+    if (op === "=") {
+      equalHandler(operator);
+    } else {
+      setNum1(screenValue);
+      setOper(op);
+      console.log(op);
+      setScreenValue("");
+    }
+  }
+
+  function equalHandler(operator) {
+    switch (operator) {
+      case "+":
+        setScreenValue(Number(num1) + Number(screenValue));
+        break;
+      case "-":
+        setScreenValue(Number(num1) - Number(screenValue));
+        break;
+      case "*":
+        setScreenValue(Number(num1) * Number(screenValue));
+        break;
+      case "/":
+        setScreenValue(Number(num1) / Number(screenValue));
+        break;
+    }
+  }
+
   return (
     <div>
-      <Screen value={screen} />
+      <Screen value={screenValue} />
       <div className="container">
         <div className="right">
           <div className="autoOperators">
-            {autoButtNames.map((e) => {
-              return <ButtAuto name={e} />;
-            })}
+            {autoButtNames.map((e) => (
+              <ButtAuto name={e} />
+            ))}
           </div>
           <div className="numbers">
-            {numbButtNames.map((e) => {
-              return <ButtNumb name={e} func={addNum} />;
-            })}
+            {numbButtNames.map((e) => (
+              <ButtNumb name={e} funcNum={num1Handler} />
+            ))}
           </div>
         </div>
         <div className="operators">
-          {operButtNames.map((e) => {
-            return <ButtOper name={e} />;
-          })}
+          {operButtNames.map((e) => (
+            <ButtOper name={e} funcOpe={opHandler} />
+          ))}
         </div>
       </div>
     </div>
