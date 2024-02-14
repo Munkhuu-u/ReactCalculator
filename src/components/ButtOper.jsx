@@ -1,14 +1,15 @@
 import "../styles/buttOper.css";
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
 export default function ButtOper({ name, funcOpe, opClick, setOpClick }) {
-  // const [push, setPush] = useState("operator");
+  const [push, setPush] = useState("operator");
   return (
     <button
-      className={`${opClick}`}
+      className={`${(opClick, push)}`}
       onClick={(e) => {
         funcOpe(name);
-        // setOpClick(opClick === "operator" ? "operatorPushed" : "operator");
+        setPush(push === "operator" ? "operatorPushed" : "operator");
+        setOpClick("operator");
       }}
     >
       {name}
