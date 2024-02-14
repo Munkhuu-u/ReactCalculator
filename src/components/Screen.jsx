@@ -1,7 +1,9 @@
+import "../styles/value.css";
+
 export default function Screen({ value }) {
   return (
-    <div>
-      <p>Value: {value}</p>
+    <div className="value">
+      <p>{value}</p>
     </div>
   );
 }

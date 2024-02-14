@@ -1,0 +1,8 @@
+.value {
+  display: flex;
+  font-size: 35px;
+  justify-content: right;
+  align-items: end;
+  color: white;
+  height: 50px;
+}

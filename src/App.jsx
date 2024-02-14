@@ -65,9 +65,9 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="container">
       <Screen value={screenValue} />
-      <div className="container">
+      <div className="buttons">
         <div className="right">
           <div className="autoOperators">
             {autoButtNames.map((e) => (

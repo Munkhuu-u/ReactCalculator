@@ -5,14 +5,32 @@
 }
 .container {
   display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  margin-top: 50px;
+  background-color: black;
+  padding: 15px;
+  padding-top: 30px;
+  border-radius: 25px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+.autoOperators {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
 }
 .numbers {
-  width: 150px;
+  width: 165px;
   display: flex;
-  flex-direction: ro;
   flex-wrap: wrap;
+  gap: 5px;
 }
 .operators {
+  gap: 5px;
   display: flex;
   flex-direction: column;
 }
